@@ -107,4 +107,4 @@ When making changes to `parcl-v3-idl.json` or `parcl-v3-idl.ts`, please ensure t
 
 ## License
 
-[MIT](./LICENSE) (Assuming you will add a LICENSE file. If not, update this section.)
+[MIT](./LICENSE)
