@@ -1,0 +1,11 @@
+# Ignore sourcemaps from the dist output
+dist/**/*.map
+
+# Optional: Ignore test files if they were ever included by mistake
+# test/
+# tests/
+
+# Optional: Ignore local config files if any
+# .env
+# local.*
+# *.local 
