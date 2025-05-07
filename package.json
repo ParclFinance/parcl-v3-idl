@@ -1,0 +1,50 @@
+{
+  "name": "@parcl-oss/parcl-v3-idl",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "TypeScript and JSON IDL for the Parcl V3 protocol on Solana.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "parcl-v3-idl.json"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "prepublishOnly": "pnpm run build",
+    "test": "ava"
+  },
+  "ava": {
+    "extensions": {
+      "ts": "module"
+    },
+    "nodeArguments": [
+      "--loader=ts-node/esm"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ParclFinance/parcl-v3-idl.git"
+  },
+  "keywords": [
+    "parcl",
+    "solana",
+    "idl",
+    "anchor",
+    "blockchain"
+  ],
+  "author": "Thomas Bonanni <tom@parcl.co>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ParclFinance/parcl-v3-idl/issues"
+  },
+  "homepage": "https://github.com/ParclFinance/parcl-v3-idl#readme",
+  "devDependencies": {
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3",
+    "ava": "^6.1.3",
+    "ts-node": "^10.9.2",
+    "@types/node": "^20.12.7"
+  }
+}

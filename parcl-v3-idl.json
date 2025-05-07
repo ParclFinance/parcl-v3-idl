@@ -1,0 +1,6127 @@
+{
+  "address": "3parcLrT7WnXAcyPfkCz49oofuuf2guUKkjuFkAhZW8Y",
+  "metadata": {
+    "name": "parcl_v3",
+    "version": "0.0.4",
+    "spec": "0.1.0"
+  },
+  "instructions": [
+    {
+      "name": "create_exchange",
+      "discriminator": [
+        31,
+        44,
+        206,
+        54,
+        122,
+        134,
+        94,
+        218
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "collateral_mint"
+        },
+        {
+          "name": "collateral_vault",
+          "writable": true
+        },
+        {
+          "name": "upgrade_authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "parcl_v3_program"
+        },
+        {
+          "name": "parcl_v3_program_data"
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "system_program"
+        },
+        {
+          "name": "rent"
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "CreateExchangeParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "nominate_admin",
+      "discriminator": [
+        134,
+        11,
+        31,
+        244,
+        20,
+        77,
+        138,
+        121
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "nominated_admin"
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "accept_admin",
+      "discriminator": [
+        112,
+        42,
+        45,
+        90,
+        116,
+        181,
+        13,
+        170
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "nominated_admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "add_oracle_config",
+      "discriminator": [
+        189,
+        15,
+        94,
+        242,
+        86,
+        86,
+        214,
+        54
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "oracle_program"
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "AddOracleConfigParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "remove_oracle_config",
+      "discriminator": [
+        58,
+        42,
+        122,
+        48,
+        28,
+        241,
+        111,
+        243
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "oracle_program"
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "collect_protocol_fees",
+      "discriminator": [
+        22,
+        67,
+        23,
+        98,
+        150,
+        178,
+        70,
+        220
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "collateral_vault",
+          "writable": true
+        },
+        {
+          "name": "collateral_token_account",
+          "writable": true
+        },
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "update_exchange_status",
+      "discriminator": [
+        83,
+        160,
+        252,
+        250,
+        129,
+        116,
+        49,
+        223
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "UpdateExchangeStatusParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_settlement_delay",
+      "discriminator": [
+        122,
+        91,
+        209,
+        53,
+        160,
+        209,
+        137,
+        158
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "SetSettlementDelayParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_min_lp_duration",
+      "discriminator": [
+        96,
+        23,
+        58,
+        213,
+        37,
+        133,
+        252,
+        148
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "SetMinLpDurationParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_protocol_fee_rate",
+      "discriminator": [
+        95,
+        7,
+        4,
+        50,
+        154,
+        79,
+        156,
+        131
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "SetProtocolFeeRateParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_exchange_liquidation_settings",
+      "discriminator": [
+        181,
+        50,
+        230,
+        143,
+        205,
+        0,
+        13,
+        13
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "SetExchangeLiquidationSettingsParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_authorized_settler",
+      "discriminator": [
+        148,
+        239,
+        242,
+        106,
+        39,
+        192,
+        245,
+        61
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "authorized_settler"
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "set_authorized_protocol_fees_collector",
+      "discriminator": [
+        89,
+        218,
+        100,
+        189,
+        115,
+        229,
+        65,
+        172
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "authorized_protocol_fees_collector"
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "set_max_keeper_tip_rate",
+      "discriminator": [
+        120,
+        245,
+        24,
+        0,
+        193,
+        218,
+        45,
+        236
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "SetMaxKeeperTipRateParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "create_market",
+      "discriminator": [
+        103,
+        226,
+        97,
+        235,
+        200,
+        188,
+        251,
+        254
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "market",
+          "writable": true
+        },
+        {
+          "name": "price_feed"
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program"
+        },
+        {
+          "name": "rent"
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "CreateMarketParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "close_market",
+      "discriminator": [
+        88,
+        154,
+        248,
+        186,
+        48,
+        14,
+        123,
+        244
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "market",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "update_market_status",
+      "discriminator": [
+        137,
+        100,
+        251,
+        184,
+        172,
+        17,
+        173,
+        36
+      ],
+      "accounts": [
+        {
+          "name": "exchange"
+        },
+        {
+          "name": "market",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "UpdateMarketStatusParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_price_feed",
+      "discriminator": [
+        13,
+        15,
+        231,
+        129,
+        61,
+        7,
+        28,
+        122
+      ],
+      "accounts": [
+        {
+          "name": "exchange"
+        },
+        {
+          "name": "market",
+          "writable": true
+        },
+        {
+          "name": "price_feed"
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "set_fee_rates",
+      "discriminator": [
+        185,
+        77,
+        201,
+        28,
+        224,
+        126,
+        111,
+        111
+      ],
+      "accounts": [
+        {
+          "name": "exchange"
+        },
+        {
+          "name": "market",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "SetFeeRatesParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_market_liquidation_settings",
+      "discriminator": [
+        134,
+        233,
+        157,
+        58,
+        7,
+        145,
+        236,
+        92
+      ],
+      "accounts": [
+        {
+          "name": "exchange"
+        },
+        {
+          "name": "market",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "SetMarketLiquidationSettingsParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_funding_settings",
+      "discriminator": [
+        28,
+        105,
+        178,
+        65,
+        72,
+        98,
+        202,
+        5
+      ],
+      "accounts": [
+        {
+          "name": "exchange"
+        },
+        {
+          "name": "market",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "SetFundingSettingsParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_max_side_size",
+      "discriminator": [
+        104,
+        244,
+        91,
+        96,
+        165,
+        60,
+        96,
+        178
+      ],
+      "accounts": [
+        {
+          "name": "exchange"
+        },
+        {
+          "name": "market",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "SetMaxSideSizeParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_locked_oi_settings",
+      "discriminator": [
+        190,
+        152,
+        6,
+        14,
+        248,
+        118,
+        72,
+        2
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "SetLockedOiSettingsParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "add_liquidity_v2",
+      "discriminator": [
+        126,
+        118,
+        210,
+        37,
+        80,
+        190,
+        19,
+        105
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "lp_position",
+          "writable": true
+        },
+        {
+          "name": "collateral_vault",
+          "writable": true
+        },
+        {
+          "name": "owner_token_account",
+          "writable": true
+        },
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "system_program"
+        },
+        {
+          "name": "rent"
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "AddLiquidityV2Params"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "remove_liquidity_v2",
+      "discriminator": [
+        155,
+        227,
+        21,
+        224,
+        143,
+        194,
+        226,
+        238
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "lp_position",
+          "writable": true
+        },
+        {
+          "name": "settlement_request",
+          "writable": true
+        },
+        {
+          "name": "owner_token_account"
+        },
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program"
+        },
+        {
+          "name": "rent"
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "RemoveLiquidityV2Params"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "close_lp_position",
+      "discriminator": [
+        33,
+        118,
+        57,
+        195,
+        133,
+        126,
+        105,
+        18
+      ],
+      "accounts": [
+        {
+          "name": "exchange"
+        },
+        {
+          "name": "lp_position",
+          "writable": true
+        },
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "upgrade_lp_account",
+      "discriminator": [
+        252,
+        100,
+        74,
+        210,
+        78,
+        135,
+        113,
+        226
+      ],
+      "accounts": [
+        {
+          "name": "exchange"
+        },
+        {
+          "name": "lp_account",
+          "writable": true
+        },
+        {
+          "name": "lp_position",
+          "writable": true
+        },
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program"
+        },
+        {
+          "name": "rent"
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "UpgradeLpAccountParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "create_lp_account",
+      "discriminator": [
+        233,
+        44,
+        89,
+        248,
+        24,
+        157,
+        51,
+        237
+      ],
+      "accounts": [
+        {
+          "name": "exchange"
+        },
+        {
+          "name": "lp_account",
+          "writable": true
+        },
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program"
+        },
+        {
+          "name": "rent"
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "close_lp_account",
+      "discriminator": [
+        27,
+        133,
+        223,
+        30,
+        9,
+        30,
+        195,
+        130
+      ],
+      "accounts": [
+        {
+          "name": "exchange"
+        },
+        {
+          "name": "lp_account",
+          "writable": true
+        },
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "add_liquidity",
+      "discriminator": [
+        181,
+        157,
+        89,
+        67,
+        143,
+        182,
+        52,
+        72
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "lp_account",
+          "writable": true
+        },
+        {
+          "name": "collateral_vault",
+          "writable": true
+        },
+        {
+          "name": "signer_token_account",
+          "writable": true
+        },
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "AddLiquidityParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "remove_liquidity",
+      "discriminator": [
+        80,
+        85,
+        209,
+        72,
+        24,
+        206,
+        177,
+        108
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "lp_account",
+          "writable": true
+        },
+        {
+          "name": "settlement_request",
+          "writable": true
+        },
+        {
+          "name": "owner_token_account"
+        },
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program"
+        },
+        {
+          "name": "rent"
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "RemoveLiquidityParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_lp_account_delegate",
+      "discriminator": [
+        231,
+        22,
+        40,
+        242,
+        252,
+        72,
+        209,
+        21
+      ],
+      "accounts": [
+        {
+          "name": "exchange"
+        },
+        {
+          "name": "lp_account",
+          "writable": true
+        },
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "SetLpAccountDelegateParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "create_margin_account",
+      "discriminator": [
+        98,
+        114,
+        213,
+        184,
+        129,
+        89,
+        90,
+        185
+      ],
+      "accounts": [
+        {
+          "name": "exchange"
+        },
+        {
+          "name": "margin_account",
+          "writable": true
+        },
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program"
+        },
+        {
+          "name": "rent"
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "CreateMarginAccountParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "close_margin_account",
+      "discriminator": [
+        105,
+        215,
+        41,
+        239,
+        166,
+        207,
+        1,
+        103
+      ],
+      "accounts": [
+        {
+          "name": "exchange"
+        },
+        {
+          "name": "margin_account",
+          "writable": true
+        },
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "deposit_margin",
+      "discriminator": [
+        240,
+        96,
+        57,
+        37,
+        173,
+        174,
+        158,
+        219
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "margin_account",
+          "writable": true
+        },
+        {
+          "name": "collateral_vault",
+          "writable": true
+        },
+        {
+          "name": "signer_token_account",
+          "writable": true
+        },
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "DepositMarginParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "withdraw_margin",
+      "discriminator": [
+        124,
+        222,
+        8,
+        141,
+        181,
+        108,
+        15,
+        176
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "margin_account",
+          "writable": true
+        },
+        {
+          "name": "settlement_request",
+          "writable": true
+        },
+        {
+          "name": "owner_token_account"
+        },
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program"
+        },
+        {
+          "name": "rent"
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "WithdrawMarginParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "modify_position",
+      "discriminator": [
+        48,
+        249,
+        6,
+        139,
+        14,
+        95,
+        106,
+        88
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "margin_account",
+          "writable": true
+        },
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "ModifyPositionParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_margin_account_delegate",
+      "discriminator": [
+        174,
+        245,
+        106,
+        69,
+        115,
+        187,
+        76,
+        238
+      ],
+      "accounts": [
+        {
+          "name": "exchange"
+        },
+        {
+          "name": "margin_account",
+          "writable": true
+        },
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "SetMarginAccountDelegateParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "liquidate",
+      "discriminator": [
+        223,
+        179,
+        226,
+        125,
+        48,
+        46,
+        39,
+        74
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "margin_account",
+          "writable": true
+        },
+        {
+          "name": "liquidator_margin_account",
+          "writable": true
+        },
+        {
+          "name": "liquidator",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "owner",
+          "writable": true
+        },
+        {
+          "name": "system_program"
+        },
+        {
+          "name": "rent"
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "option": {
+              "defined": {
+                "name": "LiquidateParams"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "refresh_locked_oi_accounting",
+      "discriminator": [
+        255,
+        224,
+        156,
+        193,
+        13,
+        228,
+        79,
+        161
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "process_settlement_requests",
+      "discriminator": [
+        245,
+        52,
+        151,
+        27,
+        93,
+        16,
+        154,
+        112
+      ],
+      "accounts": [
+        {
+          "name": "exchange",
+          "writable": true
+        },
+        {
+          "name": "collateral_vault",
+          "writable": true
+        },
+        {
+          "name": "keeper_token_account",
+          "writable": true
+        },
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "event_authority"
+        },
+        {
+          "name": "program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "get_margins",
+      "discriminator": [
+        107,
+        87,
+        123,
+        44,
+        142,
+        3,
+        173,
+        41
+      ],
+      "accounts": [
+        {
+          "name": "exchange"
+        },
+        {
+          "name": "margin_account"
+        }
+      ],
+      "args": [],
+      "returns": {
+        "defined": {
+          "name": "MarginsClient"
+        }
+      }
+    },
+    {
+      "name": "get_withdrawable_margin",
+      "discriminator": [
+        5,
+        66,
+        26,
+        120,
+        103,
+        149,
+        195,
+        21
+      ],
+      "accounts": [
+        {
+          "name": "exchange"
+        },
+        {
+          "name": "margin_account"
+        }
+      ],
+      "args": [],
+      "returns": "u64"
+    },
+    {
+      "name": "get_fill_price",
+      "discriminator": [
+        123,
+        142,
+        223,
+        106,
+        67,
+        203,
+        119,
+        250
+      ],
+      "accounts": [
+        {
+          "name": "exchange"
+        },
+        {
+          "name": "market"
+        },
+        {
+          "name": "price_feed"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "GetFillPriceParams"
+            }
+          }
+        }
+      ],
+      "returns": "u64"
+    },
+    {
+      "name": "get_trade_fee",
+      "discriminator": [
+        71,
+        106,
+        93,
+        235,
+        168,
+        134,
+        140,
+        202
+      ],
+      "accounts": [
+        {
+          "name": "exchange"
+        },
+        {
+          "name": "market"
+        },
+        {
+          "name": "price_feed"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "GetTradeFeeParams"
+            }
+          }
+        }
+      ],
+      "returns": "u64"
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Exchange",
+      "discriminator": [
+        30,
+        200,
+        220,
+        149,
+        3,
+        61,
+        104,
+        50
+      ]
+    },
+    {
+      "name": "LpAccount",
+      "discriminator": [
+        23,
+        166,
+        251,
+        222,
+        23,
+        27,
+        215,
+        48
+      ]
+    },
+    {
+      "name": "LpPosition",
+      "discriminator": [
+        105,
+        241,
+        37,
+        200,
+        224,
+        2,
+        252,
+        90
+      ]
+    },
+    {
+      "name": "MarginAccount",
+      "discriminator": [
+        133,
+        220,
+        173,
+        213,
+        179,
+        211,
+        43,
+        238
+      ]
+    },
+    {
+      "name": "Market",
+      "discriminator": [
+        219,
+        190,
+        213,
+        55,
+        0,
+        227,
+        198,
+        154
+      ]
+    },
+    {
+      "name": "SettlementRequest",
+      "discriminator": [
+        140,
+        131,
+        219,
+        225,
+        201,
+        122,
+        84,
+        250
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "AcceptAdminEvent",
+      "discriminator": [
+        214,
+        86,
+        179,
+        243,
+        233,
+        242,
+        142,
+        170
+      ]
+    },
+    {
+      "name": "AddOracleConfigEvent",
+      "discriminator": [
+        28,
+        130,
+        142,
+        47,
+        191,
+        111,
+        140,
+        233
+      ]
+    },
+    {
+      "name": "CollectProtocolFeesEvent",
+      "discriminator": [
+        138,
+        239,
+        63,
+        34,
+        151,
+        127,
+        184,
+        58
+      ]
+    },
+    {
+      "name": "CreateExchangeEvent",
+      "discriminator": [
+        8,
+        136,
+        64,
+        232,
+        86,
+        62,
+        200,
+        47
+      ]
+    },
+    {
+      "name": "NominateAdminEvent",
+      "discriminator": [
+        153,
+        248,
+        199,
+        130,
+        78,
+        136,
+        12,
+        251
+      ]
+    },
+    {
+      "name": "RemoveOracleConfigEvent",
+      "discriminator": [
+        52,
+        22,
+        216,
+        248,
+        91,
+        237,
+        235,
+        227
+      ]
+    },
+    {
+      "name": "SetAuthorizedProtocolFeesCollectorEvent",
+      "discriminator": [
+        9,
+        172,
+        59,
+        143,
+        121,
+        78,
+        14,
+        68
+      ]
+    },
+    {
+      "name": "SetAuthorizedSettlerEvent",
+      "discriminator": [
+        16,
+        221,
+        121,
+        101,
+        94,
+        253,
+        218,
+        149
+      ]
+    },
+    {
+      "name": "SetExchangeLiquidationSettingsEvent",
+      "discriminator": [
+        57,
+        108,
+        21,
+        22,
+        167,
+        210,
+        90,
+        127
+      ]
+    },
+    {
+      "name": "SetLockedOiSettingsEvent",
+      "discriminator": [
+        74,
+        166,
+        21,
+        116,
+        26,
+        158,
+        128,
+        243
+      ]
+    },
+    {
+      "name": "SetMaxKeeperTipRateEvent",
+      "discriminator": [
+        254,
+        52,
+        211,
+        219,
+        97,
+        98,
+        88,
+        210
+      ]
+    },
+    {
+      "name": "SetMinLpDurationEvent",
+      "discriminator": [
+        44,
+        175,
+        70,
+        183,
+        229,
+        216,
+        1,
+        17
+      ]
+    },
+    {
+      "name": "SetProtocolFeeRateEvent",
+      "discriminator": [
+        82,
+        183,
+        160,
+        206,
+        56,
+        180,
+        196,
+        21
+      ]
+    },
+    {
+      "name": "SetSettlementDelayEvent",
+      "discriminator": [
+        171,
+        254,
+        36,
+        96,
+        101,
+        38,
+        108,
+        21
+      ]
+    },
+    {
+      "name": "UpdateExchangeStatusEvent",
+      "discriminator": [
+        1,
+        210,
+        234,
+        193,
+        80,
+        211,
+        182,
+        32
+      ]
+    },
+    {
+      "name": "CloseMarketEvent",
+      "discriminator": [
+        185,
+        129,
+        244,
+        21,
+        39,
+        125,
+        28,
+        54
+      ]
+    },
+    {
+      "name": "CreateMarketEvent",
+      "discriminator": [
+        192,
+        85,
+        193,
+        210,
+        137,
+        36,
+        225,
+        173
+      ]
+    },
+    {
+      "name": "SetFeeRatesEvent",
+      "discriminator": [
+        196,
+        56,
+        205,
+        21,
+        204,
+        151,
+        247,
+        77
+      ]
+    },
+    {
+      "name": "SetFundingSettingsEvent",
+      "discriminator": [
+        226,
+        50,
+        240,
+        181,
+        229,
+        118,
+        86,
+        224
+      ]
+    },
+    {
+      "name": "SetMarketLiquidationSettingsEvent",
+      "discriminator": [
+        238,
+        89,
+        39,
+        27,
+        252,
+        150,
+        99,
+        79
+      ]
+    },
+    {
+      "name": "SetMaxSideSizeEvent",
+      "discriminator": [
+        203,
+        172,
+        164,
+        152,
+        134,
+        245,
+        8,
+        50
+      ]
+    },
+    {
+      "name": "SetPriceFeedEvent",
+      "discriminator": [
+        94,
+        196,
+        13,
+        244,
+        49,
+        6,
+        90,
+        199
+      ]
+    },
+    {
+      "name": "UpdateMarketStatusEvent",
+      "discriminator": [
+        20,
+        131,
+        214,
+        228,
+        104,
+        228,
+        116,
+        125
+      ]
+    },
+    {
+      "name": "RefreshLockedOiAccountingEvent",
+      "discriminator": [
+        99,
+        100,
+        157,
+        133,
+        161,
+        103,
+        135,
+        152
+      ]
+    },
+    {
+      "name": "AddLiquidityEvent",
+      "discriminator": [
+        27,
+        178,
+        153,
+        186,
+        47,
+        196,
+        140,
+        45
+      ]
+    },
+    {
+      "name": "CloseLpAccountEvent",
+      "discriminator": [
+        25,
+        249,
+        102,
+        154,
+        167,
+        112,
+        77,
+        116
+      ]
+    },
+    {
+      "name": "CreateLpAccountEvent",
+      "discriminator": [
+        157,
+        67,
+        155,
+        31,
+        125,
+        251,
+        249,
+        26
+      ]
+    },
+    {
+      "name": "RemoveLiquidityEvent",
+      "discriminator": [
+        141,
+        199,
+        182,
+        123,
+        159,
+        94,
+        215,
+        102
+      ]
+    },
+    {
+      "name": "SetLpAccountDelegateEvent",
+      "discriminator": [
+        204,
+        138,
+        140,
+        104,
+        46,
+        179,
+        18,
+        223
+      ]
+    },
+    {
+      "name": "UpgradeLpAccountEvent",
+      "discriminator": [
+        136,
+        222,
+        178,
+        80,
+        210,
+        241,
+        31,
+        128
+      ]
+    },
+    {
+      "name": "AddLiquidityV2Event",
+      "discriminator": [
+        229,
+        32,
+        45,
+        129,
+        91,
+        87,
+        192,
+        71
+      ]
+    },
+    {
+      "name": "CloseLpPositionEvent",
+      "discriminator": [
+        29,
+        15,
+        201,
+        144,
+        224,
+        50,
+        119,
+        28
+      ]
+    },
+    {
+      "name": "RemoveLiquidityV2Event",
+      "discriminator": [
+        113,
+        152,
+        216,
+        178,
+        113,
+        218,
+        165,
+        65
+      ]
+    },
+    {
+      "name": "CloseMarginAccountEvent",
+      "discriminator": [
+        240,
+        206,
+        96,
+        249,
+        63,
+        171,
+        143,
+        51
+      ]
+    },
+    {
+      "name": "CreateMarginAccountEvent",
+      "discriminator": [
+        26,
+        216,
+        96,
+        107,
+        235,
+        169,
+        25,
+        14
+      ]
+    },
+    {
+      "name": "DepositMarginEvent",
+      "discriminator": [
+        181,
+        219,
+        31,
+        12,
+        86,
+        251,
+        6,
+        11
+      ]
+    },
+    {
+      "name": "LiquidateEventV2",
+      "discriminator": [
+        192,
+        76,
+        32,
+        249,
+        54,
+        55,
+        196,
+        21
+      ]
+    },
+    {
+      "name": "LiquidateEvent",
+      "discriminator": [
+        158,
+        94,
+        144,
+        4,
+        147,
+        52,
+        5,
+        255
+      ]
+    },
+    {
+      "name": "ModifyPositionEvent",
+      "discriminator": [
+        45,
+        62,
+        138,
+        1,
+        254,
+        207,
+        234,
+        180
+      ]
+    },
+    {
+      "name": "SetMarginAccountDelegateEvent",
+      "discriminator": [
+        132,
+        125,
+        19,
+        71,
+        194,
+        35,
+        152,
+        95
+      ]
+    },
+    {
+      "name": "WithdrawMarginEvent",
+      "discriminator": [
+        68,
+        99,
+        78,
+        113,
+        211,
+        11,
+        225,
+        145
+      ]
+    },
+    {
+      "name": "ProcessSettlementRequestsEvent",
+      "discriminator": [
+        36,
+        115,
+        143,
+        25,
+        115,
+        44,
+        201,
+        14
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "IntegerOverflow",
+      "msg": "Integer overflow"
+    },
+    {
+      "code": 6001,
+      "name": "DivideByZero",
+      "msg": "Divide by zero"
+    },
+    {
+      "code": 6002,
+      "name": "UnsupportedPow10",
+      "msg": "Unsupported power of 10. Exponent is too large"
+    },
+    {
+      "code": 6003,
+      "name": "BigIntegerConversionError",
+      "msg": "Big integer conversion error"
+    },
+    {
+      "code": 6004,
+      "name": "IntegerConversionError",
+      "msg": "Integer conversion error"
+    },
+    {
+      "code": 6005,
+      "name": "TokenAccountMintMismatch",
+      "msg": "Mismatch between token account's mint and source account's mint"
+    },
+    {
+      "code": 6006,
+      "name": "ExchangeMismatch",
+      "msg": "Account's exchange does not match provided exchange"
+    },
+    {
+      "code": 6007,
+      "name": "AdminMismatch",
+      "msg": "Exchange's admin does not match provided admin"
+    },
+    {
+      "code": 6008,
+      "name": "NominatedAdminMismatch",
+      "msg": "Exchange's nominated admin does not match provided nominated admin"
+    },
+    {
+      "code": 6009,
+      "name": "MarginAccountMismatch",
+      "msg": "Position's margin account does not match provided margin account"
+    },
+    {
+      "code": 6010,
+      "name": "MarketMismatch",
+      "msg": "Position's market does not match provided market"
+    },
+    {
+      "code": 6011,
+      "name": "PriceFeedMismatch",
+      "msg": "Market's price feed does not match provided price feed"
+    },
+    {
+      "code": 6012,
+      "name": "MarginAccountOwnerMismatch",
+      "msg": "Marign account's owner does not match provided owner"
+    },
+    {
+      "code": 6013,
+      "name": "LpAccountOwnerMismatch",
+      "msg": "LP account's owner does not match provided owner"
+    },
+    {
+      "code": 6014,
+      "name": "LpPositionOwnerMismatch",
+      "msg": "LP position's owner does not match provided owner"
+    },
+    {
+      "code": 6015,
+      "name": "MarketIdsIsFull",
+      "msg": "Exchange market ids array is full"
+    },
+    {
+      "code": 6016,
+      "name": "CannotFindMarketId",
+      "msg": "Cannot find market id in exchange market ids array"
+    },
+    {
+      "code": 6017,
+      "name": "InvalidSettlementDelay",
+      "msg": "Invalid settlement delay"
+    },
+    {
+      "code": 6018,
+      "name": "InvalidMinLpDuration",
+      "msg": "Invalid minimum LP duration"
+    },
+    {
+      "code": 6019,
+      "name": "InvalidProtocolFeeRate",
+      "msg": "Invalid protocol fee rate"
+    },
+    {
+      "code": 6020,
+      "name": "InvalidLiquidationFeeBounds",
+      "msg": "Invalid exchange liquidation fee bounds. Minimum must be less than maximum fee"
+    },
+    {
+      "code": 6021,
+      "name": "InvalidExchangeLiquidaitonSettingsUpdate",
+      "msg": "Invalid exchange liquidation settings params. No update provided"
+    },
+    {
+      "code": 6022,
+      "name": "InvalidMaxKeeperFeeRate",
+      "msg": "Invalid max keeper fee rate"
+    },
+    {
+      "code": 6023,
+      "name": "OracleAlreadyAddedToExchange",
+      "msg": "Oracle is already added to exchange"
+    },
+    {
+      "code": 6024,
+      "name": "ExchangeOraclesListFull",
+      "msg": "Exchange's oracle list is full"
+    },
+    {
+      "code": 6025,
+      "name": "InvalidOracleProgram",
+      "msg": "Invalid oracle program. Cannot find oracle program in exchange's list"
+    },
+    {
+      "code": 6026,
+      "name": "UnsupportedOracle",
+      "msg": "Unsupported oracle"
+    },
+    {
+      "code": 6027,
+      "name": "CannotNominateCurrentAdmin",
+      "msg": "Cannot nominate current admin"
+    },
+    {
+      "code": 6028,
+      "name": "CollateralAmountLessThanExchangeBalance",
+      "msg": "Collateral amount less than exchange balance"
+    },
+    {
+      "code": 6029,
+      "name": "InvalidLockedOpenInterestStalenessThreshold",
+      "msg": "Locked open interest staleness threshold exceeds max value"
+    },
+    {
+      "code": 6030,
+      "name": "InvalidLockedOpenInterestRatio",
+      "msg": "Locked open interest ratio must exceed zero"
+    },
+    {
+      "code": 6031,
+      "name": "CannotCloseMarket",
+      "msg": "Cannot close market account"
+    },
+    {
+      "code": 6032,
+      "name": "InvalidTradeFeeRates",
+      "msg": "Invalid trade fee rates"
+    },
+    {
+      "code": 6033,
+      "name": "InvalidTradeFeeRatesUpdate",
+      "msg": "Invalid trade fee rates update. No update provided"
+    },
+    {
+      "code": 6034,
+      "name": "NewMaxSizeLessThanTotal",
+      "msg": "New max size is less than the market's current size"
+    },
+    {
+      "code": 6035,
+      "name": "InvalidMarketLiquidationSettingsUpdate",
+      "msg": "Invalid market liquidation settings update. No update provided"
+    },
+    {
+      "code": 6036,
+      "name": "InvalidFundingSettingsUpdate",
+      "msg": "Invalid funding settings update. No update provided"
+    },
+    {
+      "code": 6037,
+      "name": "InvalidMaxSideSizeUpdate",
+      "msg": "Invalid max side size update"
+    },
+    {
+      "code": 6038,
+      "name": "LockedOpenInterestAccountingisStale",
+      "msg": "Locked open interest accounting is stale"
+    },
+    {
+      "code": 6039,
+      "name": "InvalidCollateralVault",
+      "msg": "Mismatch between exchange's collateral vault and provided collateral vault"
+    },
+    {
+      "code": 6040,
+      "name": "InvalidExchangeStatus",
+      "msg": "Invalid exchange status"
+    },
+    {
+      "code": 6041,
+      "name": "DepositMarginPaused",
+      "msg": "Deposit margin paused"
+    },
+    {
+      "code": 6042,
+      "name": "WithdrawMarginPaused",
+      "msg": "Withdraw margin paused"
+    },
+    {
+      "code": 6043,
+      "name": "AddLiquidityPaused",
+      "msg": "Add liquidity paused"
+    },
+    {
+      "code": 6044,
+      "name": "RemoveLiquidityPaused",
+      "msg": "Remove liquidity paused"
+    },
+    {
+      "code": 6045,
+      "name": "IncreasePositionPausedExchange",
+      "msg": "Increase position paused on exchange"
+    },
+    {
+      "code": 6046,
+      "name": "DecreasePositionPausedExchange",
+      "msg": "Decrease position paused on exchange"
+    },
+    {
+      "code": 6047,
+      "name": "LiquidatePaused",
+      "msg": "Liquidate paused"
+    },
+    {
+      "code": 6048,
+      "name": "ProcessSettlementRequestsPaused",
+      "msg": "Process settlement requests paused"
+    },
+    {
+      "code": 6049,
+      "name": "CannotFindOracleConfig",
+      "msg": "Cannot find oracle config in oracle configs map"
+    },
+    {
+      "code": 6050,
+      "name": "MarginIncreaseExceedsExchangeBalance",
+      "msg": "Margin increase is greater than or equal to the exchange's balance"
+    },
+    {
+      "code": 6051,
+      "name": "LiquidityRemovalExceedsExchangeBalance",
+      "msg": "Liquidity removal is greater than the exchange's balance"
+    },
+    {
+      "code": 6052,
+      "name": "InvalidProtocolFeesCollector",
+      "msg": "Protocol fees collector must be exchange admin or authorized protocol fees collector"
+    },
+    {
+      "code": 6053,
+      "name": "InvalidMarketId",
+      "msg": "Invalid market id. Market id must exceed 0"
+    },
+    {
+      "code": 6054,
+      "name": "InvalidMarketStatus",
+      "msg": "Invalid market status"
+    },
+    {
+      "code": 6055,
+      "name": "IncreasePositionPausedMarket",
+      "msg": "Increase position paused on market"
+    },
+    {
+      "code": 6056,
+      "name": "DecreasePositionPausedMarket",
+      "msg": "Decrease position paused on market"
+    },
+    {
+      "code": 6057,
+      "name": "InsufficientExchangeBalance",
+      "msg": "Insufficient exchange balance after liquidity removal or position modification"
+    },
+    {
+      "code": 6058,
+      "name": "MinLpDurationNotElapsed",
+      "msg": "Minimum LP duration has not elapsed"
+    },
+    {
+      "code": 6059,
+      "name": "AddLiquidityInputAmountMustExceedZero",
+      "msg": "Add liquidity input amount must exceed zero"
+    },
+    {
+      "code": 6060,
+      "name": "AddLiquidityLpSharesCreatedMustExceedZero",
+      "msg": "Add liquidity lp shares created must exceed zero"
+    },
+    {
+      "code": 6061,
+      "name": "RemoveLiquidityInputSharesExceedsLpAccountSharesBalance",
+      "msg": "Remove liquidity input shares exceeds LP account's shares balance"
+    },
+    {
+      "code": 6062,
+      "name": "RemoveLiquidityInputSharesExceedsLpPositionSharesBalance",
+      "msg": "Remove liquidity input shares exceeds LP position's shares balance"
+    },
+    {
+      "code": 6063,
+      "name": "RemoveLiquidityInputSharesMustExceedZero",
+      "msg": "Remove liquidity input shares must exceed zero"
+    },
+    {
+      "code": 6064,
+      "name": "RemoveLiquidityRemovedAmountMustExceedZero",
+      "msg": "Remove liquidity removed amount must exceed zero"
+    },
+    {
+      "code": 6065,
+      "name": "InvalidLpAccountSigner",
+      "msg": "Invalid LP account signer"
+    },
+    {
+      "code": 6066,
+      "name": "CannotCloseLpAccount",
+      "msg": "Cannot close LP account with non-zero shares balance"
+    },
+    {
+      "code": 6067,
+      "name": "CannotUpgradeLpAccount",
+      "msg": "Cannot upgrade LP account with zero shares balance. Close LP account using close_lp_account instruction"
+    },
+    {
+      "code": 6068,
+      "name": "CannotCloseLpPosition",
+      "msg": "Cannot close LP position with non-zero shares balance"
+    },
+    {
+      "code": 6069,
+      "name": "CannotCloseMarginAccount",
+      "msg": "Cannot close margin account with non-zero balance and/or open positions"
+    },
+    {
+      "code": 6070,
+      "name": "PositionListIsFull",
+      "msg": "Margin account's position list is full"
+    },
+    {
+      "code": 6071,
+      "name": "PositionNotFound",
+      "msg": "Position not found in margin account's position list"
+    },
+    {
+      "code": 6072,
+      "name": "InvalidMarginAccountSigner",
+      "msg": "Invalid margin account signer"
+    },
+    {
+      "code": 6073,
+      "name": "MarketsListIsFull",
+      "msg": "Margin account's markets list is full"
+    },
+    {
+      "code": 6074,
+      "name": "MarketNotFound",
+      "msg": "Market not found in margin account's markets list"
+    },
+    {
+      "code": 6075,
+      "name": "MarketSizeExceedsMaxSize",
+      "msg": "Market size exceeds max size"
+    },
+    {
+      "code": 6076,
+      "name": "UnacceptableFillPrice",
+      "msg": "Unacceptable fill price"
+    },
+    {
+      "code": 6077,
+      "name": "InsufficientMargin",
+      "msg": "Insufficient margin"
+    },
+    {
+      "code": 6078,
+      "name": "InsufficientMarginForFee",
+      "msg": "Insufficient margin for trade fee"
+    },
+    {
+      "code": 6079,
+      "name": "MarginAccountIsNotLiquidatable",
+      "msg": "Margin account is not liquidatable"
+    },
+    {
+      "code": 6080,
+      "name": "MarginAccountIsNotInLiquidation",
+      "msg": "Margin account is not in liquidation"
+    },
+    {
+      "code": 6081,
+      "name": "CannotModifyCollateralForLiquidatableMarginAccount",
+      "msg": "Cannot modify collateral for a liquidatable margin account"
+    },
+    {
+      "code": 6082,
+      "name": "CannotModifyCollateralForAccountInLiquidation",
+      "msg": "Cannot modify collateral for a margin account in liquidatable"
+    },
+    {
+      "code": 6083,
+      "name": "NoExcessMarginForWithdrawal",
+      "msg": "No excess margin available for withdrawal"
+    },
+    {
+      "code": 6084,
+      "name": "InsufficientMarginForRequestedWithdrawalAmount",
+      "msg": "Insufficient excess margin for requested withdrawal amount"
+    },
+    {
+      "code": 6085,
+      "name": "CannotModifyPositionOfLiquidatableMarginAccount",
+      "msg": "Cannot modify a position of a liquidatable margin account"
+    },
+    {
+      "code": 6086,
+      "name": "CannotModifyPositionOfMarginAccountInLiquidation",
+      "msg": "Cannot modify a position belonging to a margin account that is in liquidation"
+    },
+    {
+      "code": 6087,
+      "name": "ModifyMarginAmountMustExceedZero",
+      "msg": "Modify margin amount must exceed zero"
+    },
+    {
+      "code": 6088,
+      "name": "InsufficientMarginForRequirementAfterModification",
+      "msg": "Insufficient margin to cover requirement after position modification"
+    },
+    {
+      "code": 6089,
+      "name": "MarginAccountLiquidatableAfterModification",
+      "msg": "Margin account is liquidatable after position modification"
+    },
+    {
+      "code": 6090,
+      "name": "PositionModificationSizeCannotBeZero",
+      "msg": "Position modification size cannot be zero"
+    },
+    {
+      "code": 6091,
+      "name": "DuplicateMarket",
+      "msg": "Duplicate market account in remaining accounts"
+    },
+    {
+      "code": 6092,
+      "name": "DuplicateTokenAccount",
+      "msg": "Duplicate token account in remaining accounts"
+    },
+    {
+      "code": 6093,
+      "name": "DuplicateSettlementRequest",
+      "msg": "Duplicate settlement request account in remaining accounts"
+    },
+    {
+      "code": 6094,
+      "name": "DuplicateSettlementRequestOwner",
+      "msg": "Duplicate settlement request owner account in remaining accounts"
+    },
+    {
+      "code": 6095,
+      "name": "MarketNotWritable",
+      "msg": "Market is not writable"
+    },
+    {
+      "code": 6096,
+      "name": "PositionNotWritable",
+      "msg": "Position is not writable"
+    },
+    {
+      "code": 6097,
+      "name": "SettlementRequestExchangeMismatch",
+      "msg": "Settlment request's exchange id does not match instruction's exchange id"
+    },
+    {
+      "code": 6098,
+      "name": "SettlementRequestNotWritable",
+      "msg": "Settlment request is not writable"
+    },
+    {
+      "code": 6099,
+      "name": "SettlementRequestOwnerNotWritable",
+      "msg": "Settlment request owner is not writable"
+    },
+    {
+      "code": 6100,
+      "name": "TokenAccountNotWritable",
+      "msg": "Token account is not writable"
+    },
+    {
+      "code": 6101,
+      "name": "FailedToLoadMarket",
+      "msg": "Failed to load market account"
+    },
+    {
+      "code": 6102,
+      "name": "FailedToLoadTokenAccount",
+      "msg": "Failed to load token account"
+    },
+    {
+      "code": 6103,
+      "name": "FailedToLoadSettlementRequest",
+      "msg": "Failed to load settlement request"
+    },
+    {
+      "code": 6104,
+      "name": "MarketAccountBorrowFailed",
+      "msg": "Failed to borrow market account data"
+    },
+    {
+      "code": 6105,
+      "name": "SettlementRequestAccountBorrowFailed",
+      "msg": "Failed to borrow settlement request account data"
+    },
+    {
+      "code": 6106,
+      "name": "OwnerNotFoundInAccountMap",
+      "msg": "Owner not found in account map"
+    },
+    {
+      "code": 6107,
+      "name": "TokenAccountNotFoundInAccountMap",
+      "msg": "Token account not found in account map"
+    },
+    {
+      "code": 6108,
+      "name": "PriceFeedNotFoundInAccountMap",
+      "msg": "Price feed not found in account map"
+    },
+    {
+      "code": 6109,
+      "name": "MarketNotFoundInAccountMap",
+      "msg": "Market not found in account map"
+    },
+    {
+      "code": 6110,
+      "name": "SettlementRequestNotReachedMaturity",
+      "msg": "Settlement request has not reached maturity"
+    },
+    {
+      "code": 6111,
+      "name": "InvalidOracleKind",
+      "msg": "Invalid oracle kind"
+    },
+    {
+      "code": 6112,
+      "name": "PythPriceAccountBorrowFailed",
+      "msg": "Failed to borrow pyth price account data"
+    },
+    {
+      "code": 6113,
+      "name": "FailedToLoadPythPriceAccount",
+      "msg": "Failed to load pyth price account"
+    },
+    {
+      "code": 6114,
+      "name": "PythPriceFeedIsStale",
+      "msg": "Price feed is stale"
+    },
+    {
+      "code": 6115,
+      "name": "InvalidPythPriceFeedConfidence",
+      "msg": "Invalid pyth price feed confidence"
+    },
+    {
+      "code": 6116,
+      "name": "PythPriceMustBeGreaterThanZero",
+      "msg": "Pyth price must be greater than zero"
+    },
+    {
+      "code": 6117,
+      "name": "PythEmaPriceMustBeGreaterThanZero",
+      "msg": "Pyth Ema price must be greater than zero"
+    },
+    {
+      "code": 6118,
+      "name": "InvalidPythStatus",
+      "msg": "Invalid pyth status"
+    },
+    {
+      "code": 6119,
+      "name": "SafeUnwrapPanicked",
+      "msg": "Assumed safe unwrap panicked"
+    },
+    {
+      "code": 6120,
+      "name": "AddLiquidityDeprecated",
+      "msg": "add_liquidity instruction is deprecated. Use add_liquidity_v2"
+    },
+    {
+      "code": 6121,
+      "name": "RemoveLiquidityDeprecated",
+      "msg": "remove_liquidity instruction is deprecated. Use remove_liquidity_v2"
+    },
+    {
+      "code": 6122,
+      "name": "CreateLpAccountDeprecated",
+      "msg": "create_lp_account instruction is deprecated"
+    },
+    {
+      "code": 6123,
+      "name": "SetLpAccountDelegateDeprecated",
+      "msg": "set_lp_account_delegate instruction is deprecated"
+    },
+    {
+      "code": 6124,
+      "name": "PythV2PriceMessageIsStale",
+      "msg": "Pyth v2 price message is stale"
+    },
+    {
+      "code": 6125,
+      "name": "PythV2InsufficientVerificationLevel",
+      "msg": "Pyth v2 price feed has insufficient verification level"
+    }
+  ],
+  "types": [
+    {
+      "name": "ExchangeUpdateEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "balance",
+            "type": "u64"
+          },
+          {
+            "name": "margin_balance",
+            "type": "u64"
+          },
+          {
+            "name": "lp_balance",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MarketUpdateEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "market_id",
+            "type": "u32"
+          },
+          {
+            "name": "index_price",
+            "type": "u64"
+          },
+          {
+            "name": "size",
+            "type": "u128"
+          },
+          {
+            "name": "skew",
+            "type": "i128"
+          },
+          {
+            "name": "size_delta",
+            "type": "i128"
+          },
+          {
+            "name": "funding_rate",
+            "type": "i128"
+          },
+          {
+            "name": "funding_per_unit",
+            "type": "i128"
+          },
+          {
+            "name": "funding_velocity",
+            "type": "i128"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AddOracleConfigParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "oracle_kind",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CreateExchangeParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "settlement_delay",
+            "type": "u64"
+          },
+          {
+            "name": "min_lp_duration",
+            "type": "u64"
+          },
+          {
+            "name": "min_liquidation_fee",
+            "type": "u64"
+          },
+          {
+            "name": "max_liquidation_fee",
+            "type": "u64"
+          },
+          {
+            "name": "locked_open_interest_staleness_threshold",
+            "type": "u64"
+          },
+          {
+            "name": "locked_open_interest_ratio",
+            "type": "u16"
+          },
+          {
+            "name": "max_keeper_tip_rate",
+            "type": "u16"
+          },
+          {
+            "name": "protocol_fee_rate",
+            "type": "u16"
+          },
+          {
+            "name": "authorized_settler",
+            "type": {
+              "option": "pubkey"
+            }
+          },
+          {
+            "name": "authorized_protocol_fees_collector",
+            "type": {
+              "option": "pubkey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetExchangeLiquidationSettingsParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "min_liquidation_fee",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "max_liquidation_fee",
+            "type": {
+              "option": "u64"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetLockedOiSettingsParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "locked_open_interest_staleness_threshold",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "locked_open_interest_ratio",
+            "type": {
+              "option": "u16"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetMaxKeeperTipRateParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "max_keeper_tip_rate",
+            "type": "u16"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetMinLpDurationParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "min_lp_duration",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetProtocolFeeRateParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "protocol_fee_rate",
+            "type": "u16"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetSettlementDelayParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "settlement_delay",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UpdateExchangeStatusParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "status",
+            "type": "u16"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CreateMarketParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "market_id",
+            "type": "u32"
+          },
+          {
+            "name": "min_position_margin",
+            "type": "u128"
+          },
+          {
+            "name": "max_liquidation_limit_accumulation_multiplier",
+            "type": "u64"
+          },
+          {
+            "name": "skew_scale",
+            "type": "u128"
+          },
+          {
+            "name": "max_side_size",
+            "type": "u128"
+          },
+          {
+            "name": "max_seconds_in_liquidation_epoch",
+            "type": "u64"
+          },
+          {
+            "name": "initial_margin_ratio",
+            "type": "u32"
+          },
+          {
+            "name": "maker_fee_rate",
+            "type": "u16"
+          },
+          {
+            "name": "taker_fee_rate",
+            "type": "u16"
+          },
+          {
+            "name": "liquidation_fee_rate",
+            "type": "u16"
+          },
+          {
+            "name": "max_funding_velocity",
+            "type": "u16"
+          },
+          {
+            "name": "min_initial_margin_ratio",
+            "type": "u16"
+          },
+          {
+            "name": "maintenance_margin_proportion",
+            "type": "u16"
+          },
+          {
+            "name": "max_liquidation_pd",
+            "type": "u16"
+          },
+          {
+            "name": "authorized_liquidator",
+            "type": {
+              "option": "pubkey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetFeeRatesParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "maker_fee_rate",
+            "type": {
+              "option": "u16"
+            }
+          },
+          {
+            "name": "taker_fee_rate",
+            "type": {
+              "option": "u16"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetFundingSettingsParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "skew_scale",
+            "type": {
+              "option": "u128"
+            }
+          },
+          {
+            "name": "max_funding_velocity",
+            "type": {
+              "option": "u16"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetMarketLiquidationSettingsParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "min_position_margin",
+            "type": {
+              "option": "u128"
+            }
+          },
+          {
+            "name": "max_liquidation_limit_accumulation_multiplier",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "max_seconds_in_liquidation_epoch",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "initial_margin_ratio",
+            "type": {
+              "option": "u32"
+            }
+          },
+          {
+            "name": "liquidation_fee_rate",
+            "type": {
+              "option": "u16"
+            }
+          },
+          {
+            "name": "min_initial_margin_ratio",
+            "type": {
+              "option": "u16"
+            }
+          },
+          {
+            "name": "maintenance_margin_proportion",
+            "type": {
+              "option": "u16"
+            }
+          },
+          {
+            "name": "max_liquidation_pd",
+            "type": {
+              "option": "u16"
+            }
+          },
+          {
+            "name": "authorized_liquidator",
+            "type": {
+              "option": "pubkey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetMaxSideSizeParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "max_side_size",
+            "type": "u128"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UpdateMarketStatusParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "status",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AddLiquidityParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "liquidity",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RemoveLiquidityParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "settlement_request_id",
+            "type": "u64"
+          },
+          {
+            "name": "shares",
+            "type": "u64"
+          },
+          {
+            "name": "keeper_tip",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetLpAccountDelegateParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "delegate",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UpgradeLpAccountParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "lp_position_id",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AddLiquidityV2Params",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "liquidity",
+            "type": "u64"
+          },
+          {
+            "name": "lp_position_id",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RemoveLiquidityV2Params",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "settlement_request_id",
+            "type": "u64"
+          },
+          {
+            "name": "shares",
+            "type": "u64"
+          },
+          {
+            "name": "keeper_tip",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CreateMarginAccountParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "margin_account_id",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DepositMarginParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "margin",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LiquidationEventV2",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "market_id",
+            "type": "u32"
+          },
+          {
+            "name": "amount_liquidated",
+            "type": "u128"
+          },
+          {
+            "name": "new_position_size",
+            "type": "i128"
+          },
+          {
+            "name": "size_delta",
+            "type": "i128"
+          },
+          {
+            "name": "index_price",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "StartLiquidationEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "liquidated_margin",
+            "type": "u64"
+          },
+          {
+            "name": "liquidation_started_at",
+            "type": "u64"
+          },
+          {
+            "name": "max_liquidation_fee",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LiquidationEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "market_id",
+            "type": "u32"
+          },
+          {
+            "name": "amount_liquidated",
+            "type": "u128"
+          },
+          {
+            "name": "new_position_size",
+            "type": "i128"
+          },
+          {
+            "name": "size_delta",
+            "type": "i128"
+          },
+          {
+            "name": "index_price",
+            "type": "u64"
+          },
+          {
+            "name": "size",
+            "type": "u128"
+          },
+          {
+            "name": "skew",
+            "type": "i128"
+          },
+          {
+            "name": "funding_rate",
+            "type": "i128"
+          },
+          {
+            "name": "funding_per_unit",
+            "type": "i128"
+          },
+          {
+            "name": "funding_velocity",
+            "type": "i128"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LiquidateParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "is_full_liquidation",
+            "type": "bool"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ModifyPositionParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "market_id",
+            "type": "u32"
+          },
+          {
+            "name": "size_delta",
+            "type": "i128"
+          },
+          {
+            "name": "acceptable_price",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetMarginAccountDelegateParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "delegate",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WithdrawMarginParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "settlement_request_id",
+            "type": "u64"
+          },
+          {
+            "name": "margin",
+            "type": "u64"
+          },
+          {
+            "name": "keeper_tip",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ProcessSettlementRequestEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "request_id",
+            "type": "u64"
+          },
+          {
+            "name": "payer",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "keeper_tip",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GetFillPriceParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "size_delta",
+            "type": "i128"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MarginsClient",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "available_margin",
+            "type": "i128"
+          },
+          {
+            "name": "required_initial_margin",
+            "type": "u64"
+          },
+          {
+            "name": "required_maintenance_margin",
+            "type": "u64"
+          },
+          {
+            "name": "required_liquidation_fee_margin",
+            "type": "u64"
+          },
+          {
+            "name": "accumulated_liquidation_fees",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GetTradeFeeParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "size_delta",
+            "type": "i128"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ExchangeAccounting",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "notional_open_interest",
+            "type": "u128"
+          },
+          {
+            "name": "unrealized_pnl",
+            "type": "i128"
+          },
+          {
+            "name": "last_time_locked_open_interest_accounting_refreshed",
+            "type": "u64"
+          },
+          {
+            "name": "balance",
+            "type": "u64"
+          },
+          {
+            "name": "margin_balance",
+            "type": "u64"
+          },
+          {
+            "name": "lp_balance",
+            "type": "u64"
+          },
+          {
+            "name": "lp_shares",
+            "type": "u64"
+          },
+          {
+            "name": "protocol_fees",
+            "type": "u64"
+          },
+          {
+            "name": "unsettled_collateral_amount",
+            "type": "u64"
+          },
+          {
+            "name": "padding",
+            "type": {
+              "array": [
+                "u8",
+                8
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ExchangeSettings",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "min_lp_duration",
+            "type": "u64"
+          },
+          {
+            "name": "settlement_delay",
+            "type": "u64"
+          },
+          {
+            "name": "min_liquidation_fee",
+            "type": "u64"
+          },
+          {
+            "name": "max_liquidation_fee",
+            "type": "u64"
+          },
+          {
+            "name": "locked_open_interest_staleness_threshold",
+            "type": "u64"
+          },
+          {
+            "name": "protocol_fee_rate",
+            "type": "u16"
+          },
+          {
+            "name": "locked_open_interest_ratio",
+            "type": "u16"
+          },
+          {
+            "name": "max_keeper_tip_rate",
+            "type": "u16"
+          },
+          {
+            "name": "padding",
+            "type": {
+              "array": [
+                "u8",
+                2
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ExchangeOracleConfig",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "kind",
+            "type": "u32"
+          },
+          {
+            "name": "program_id",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Position",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "size",
+            "type": "i128"
+          },
+          {
+            "name": "last_interaction_price",
+            "type": "u128"
+          },
+          {
+            "name": "last_interaction_funding_per_unit",
+            "type": "i128"
+          },
+          {
+            "name": "market_id",
+            "type": "u32"
+          },
+          {
+            "name": "padding",
+            "type": {
+              "array": [
+                "u8",
+                4
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "MarketAccounting",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "weighted_position_price",
+            "type": "u128"
+          },
+          {
+            "name": "last_utilized_liquidation_capacity",
+            "type": "u128"
+          },
+          {
+            "name": "size",
+            "type": "u128"
+          },
+          {
+            "name": "skew",
+            "type": "i128"
+          },
+          {
+            "name": "weighted_position_funding_per_unit",
+            "type": "i128"
+          },
+          {
+            "name": "last_funding_rate",
+            "type": "i128"
+          },
+          {
+            "name": "last_funding_per_unit",
+            "type": "i128"
+          },
+          {
+            "name": "last_time_funding_updated",
+            "type": "u64"
+          },
+          {
+            "name": "first_liquidation_epoch_start_time",
+            "type": "u64"
+          },
+          {
+            "name": "last_liquidation_epoch_index",
+            "type": "u64"
+          },
+          {
+            "name": "last_time_liquidation_capacity_updated",
+            "type": "u64"
+          },
+          {
+            "name": "padding",
+            "type": {
+              "array": [
+                "u8",
+                8
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "MarketSettings",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "min_position_margin",
+            "type": "u128"
+          },
+          {
+            "name": "skew_scale",
+            "type": "u128"
+          },
+          {
+            "name": "max_side_size",
+            "type": "u128"
+          },
+          {
+            "name": "max_liquidation_limit_accumulation_multiplier",
+            "type": "u64"
+          },
+          {
+            "name": "max_seconds_in_liquidation_epoch",
+            "type": "u64"
+          },
+          {
+            "name": "initial_margin_ratio",
+            "type": "u32"
+          },
+          {
+            "name": "maker_fee_rate",
+            "type": "u16"
+          },
+          {
+            "name": "taker_fee_rate",
+            "type": "u16"
+          },
+          {
+            "name": "max_funding_velocity",
+            "type": "u16"
+          },
+          {
+            "name": "liquidation_fee_rate",
+            "type": "u16"
+          },
+          {
+            "name": "min_initial_margin_ratio",
+            "type": "u16"
+          },
+          {
+            "name": "maintenance_margin_proportion",
+            "type": "u16"
+          },
+          {
+            "name": "max_liquidation_pd",
+            "type": "u16"
+          },
+          {
+            "name": "authorized_liquidator",
+            "type": "pubkey"
+          },
+          {
+            "name": "padding",
+            "type": {
+              "array": [
+                "u8",
+                14
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "WritableMarkets",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "All"
+          },
+          {
+            "name": "Some",
+            "fields": [
+              "u32"
+            ]
+          },
+          {
+            "name": "None"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PositionModificationKind",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "IsIncreasing"
+          },
+          {
+            "name": "IsDecreasing"
+          },
+          {
+            "name": "IsDecreasingAndIncreasing"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Sign",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Negative"
+          },
+          {
+            "name": "Positive"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rounding",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Floor"
+          },
+          {
+            "name": "Ceil"
+          },
+          {
+            "name": "None"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ExchangeStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "AddLiquidityPaused"
+          },
+          {
+            "name": "RemoveLiquidityPaused"
+          },
+          {
+            "name": "DepositMarginPaused"
+          },
+          {
+            "name": "WithdrawMarginPaused"
+          },
+          {
+            "name": "IncreasePositionPaused"
+          },
+          {
+            "name": "DecreasePositionPaused"
+          },
+          {
+            "name": "LiquidatePaused"
+          },
+          {
+            "name": "ProcessSettlementRequestsPaused"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MarketStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "IncreasePositionPaused"
+          },
+          {
+            "name": "DecreasePositionPaused"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OracleKind",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Pyth"
+          },
+          {
+            "name": "Parcl"
+          },
+          {
+            "name": "PythV2"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Exchange",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "accounting",
+            "type": {
+              "defined": {
+                "name": "ExchangeAccounting"
+              }
+            }
+          },
+          {
+            "name": "settings",
+            "type": {
+              "defined": {
+                "name": "ExchangeSettings"
+              }
+            }
+          },
+          {
+            "name": "id",
+            "type": "u64"
+          },
+          {
+            "name": "market_ids",
+            "type": {
+              "array": [
+                "u32",
+                62
+              ]
+            }
+          },
+          {
+            "name": "oracle_configs",
+            "type": {
+              "array": [
+                {
+                  "defined": {
+                    "name": "ExchangeOracleConfig"
+                  }
+                },
+                10
+              ]
+            }
+          },
+          {
+            "name": "status",
+            "type": "u16"
+          },
+          {
+            "name": "collateral_expo",
+            "type": "i16"
+          },
+          {
+            "name": "collateral_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "collateral_vault",
+            "type": "pubkey"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "nominated_admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "authorized_settler",
+            "type": "pubkey"
+          },
+          {
+            "name": "authorized_protocol_fees_collector",
+            "type": "pubkey"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "id_seed",
+            "type": {
+              "array": [
+                "u8",
+                8
+              ]
+            }
+          },
+          {
+            "name": "padding",
+            "type": {
+              "array": [
+                "u8",
+                11
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "LpAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "liquidity",
+            "type": "u64"
+          },
+          {
+            "name": "shares",
+            "type": "u64"
+          },
+          {
+            "name": "last_add_liquidity_timestamp",
+            "type": "u64"
+          },
+          {
+            "name": "exchange",
+            "type": "pubkey"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "delegate",
+            "type": "pubkey"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "padding",
+            "type": {
+              "array": [
+                "u8",
+                7
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "LpPosition",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "id",
+            "type": "u64"
+          },
+          {
+            "name": "liquidity",
+            "type": "u64"
+          },
+          {
+            "name": "shares",
+            "type": "u64"
+          },
+          {
+            "name": "maturity",
+            "type": "u64"
+          },
+          {
+            "name": "exchange",
+            "type": "pubkey"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "padding",
+            "type": {
+              "array": [
+                "u8",
+                7
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "MarginAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "positions",
+            "type": {
+              "array": [
+                {
+                  "defined": {
+                    "name": "Position"
+                  }
+                },
+                12
+              ]
+            }
+          },
+          {
+            "name": "margin",
+            "type": "u64"
+          },
+          {
+            "name": "max_liquidation_fee",
+            "type": "u64"
+          },
+          {
+            "name": "id",
+            "type": "u32"
+          },
+          {
+            "name": "exchange",
+            "type": "pubkey"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "delegate",
+            "type": "pubkey"
+          },
+          {
+            "name": "in_liquidation",
+            "type": "u8"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "padding",
+            "type": {
+              "array": [
+                "u8",
+                10
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Market",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "settings",
+            "type": {
+              "defined": {
+                "name": "MarketSettings"
+              }
+            }
+          },
+          {
+            "name": "accounting",
+            "type": {
+              "defined": {
+                "name": "MarketAccounting"
+              }
+            }
+          },
+          {
+            "name": "id",
+            "type": "u32"
+          },
+          {
+            "name": "exchange",
+            "type": "pubkey"
+          },
+          {
+            "name": "price_feed",
+            "type": "pubkey"
+          },
+          {
+            "name": "status",
+            "type": "u8"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "padding",
+            "type": {
+              "array": [
+                "u8",
+                10
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SettlementRequest",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "id",
+            "type": "u64"
+          },
+          {
+            "name": "maturity",
+            "type": "u64"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "keeper_tip",
+            "type": "u64"
+          },
+          {
+            "name": "exchange",
+            "type": "pubkey"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "owner_token_account",
+            "type": "pubkey"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "padding",
+            "type": {
+              "array": [
+                "u8",
+                7
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "AcceptAdminEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "new_admin",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AddOracleConfigEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "oracle_program",
+            "type": "pubkey"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "oracle_kind",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CollectProtocolFeesEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "signer",
+            "type": "pubkey"
+          },
+          {
+            "name": "protocol_fees",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CreateExchangeEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "min_lp_duration",
+            "type": "u64"
+          },
+          {
+            "name": "settlement_delay",
+            "type": "u64"
+          },
+          {
+            "name": "min_liquidation_fee",
+            "type": "u64"
+          },
+          {
+            "name": "max_liquidation_fee",
+            "type": "u64"
+          },
+          {
+            "name": "locked_open_interest_staleness_threshold",
+            "type": "u64"
+          },
+          {
+            "name": "locked_open_interest_ratio",
+            "type": "u16"
+          },
+          {
+            "name": "max_keeper_tip_rate",
+            "type": "u16"
+          },
+          {
+            "name": "protocol_fee_rate",
+            "type": "u16"
+          },
+          {
+            "name": "authorized_settler",
+            "type": {
+              "option": "pubkey"
+            }
+          },
+          {
+            "name": "authorized_protocol_fees_collector",
+            "type": {
+              "option": "pubkey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "NominateAdminEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "nominated_admin",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RemoveOracleConfigEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "oracle_program",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetAuthorizedProtocolFeesCollectorEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "authorized_protocol_fees_collector",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetAuthorizedSettlerEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "authorized_settler",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetExchangeLiquidationSettingsEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "min_liquidation_fee",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "max_liquidation_fee",
+            "type": {
+              "option": "u64"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetLockedOiSettingsEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "locked_open_interest_staleness_threshold",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "locked_open_interest_ratio",
+            "type": {
+              "option": "u16"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetMaxKeeperTipRateEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "max_keeper_tip_rate",
+            "type": "u16"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetMinLpDurationEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "min_lp_duration",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetProtocolFeeRateEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "protocol_fee_rate",
+            "type": "u16"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetSettlementDelayEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "settlement_delay",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UpdateExchangeStatusEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "status",
+            "type": "u16"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CloseMarketEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "market_id",
+            "type": "u32"
+          },
+          {
+            "name": "price_feed",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CreateMarketEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "market_id",
+            "type": "u32"
+          },
+          {
+            "name": "price_feed",
+            "type": "pubkey"
+          },
+          {
+            "name": "min_position_margin",
+            "type": "u128"
+          },
+          {
+            "name": "max_liquidation_limit_accumulation_multiplier",
+            "type": "u64"
+          },
+          {
+            "name": "skew_scale",
+            "type": "u128"
+          },
+          {
+            "name": "max_side_size",
+            "type": "u128"
+          },
+          {
+            "name": "max_seconds_in_liquidation_epoch",
+            "type": "u64"
+          },
+          {
+            "name": "initial_margin_ratio",
+            "type": "u32"
+          },
+          {
+            "name": "maker_fee_rate",
+            "type": "u16"
+          },
+          {
+            "name": "taker_fee_rate",
+            "type": "u16"
+          },
+          {
+            "name": "liquidation_fee_rate",
+            "type": "u16"
+          },
+          {
+            "name": "max_funding_velocity",
+            "type": "u16"
+          },
+          {
+            "name": "min_initial_margin_ratio",
+            "type": "u16"
+          },
+          {
+            "name": "maintenance_margin_proportion",
+            "type": "u16"
+          },
+          {
+            "name": "max_liquidation_pd",
+            "type": "u16"
+          },
+          {
+            "name": "authorized_liquidator",
+            "type": {
+              "option": "pubkey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetFeeRatesEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "market_id",
+            "type": "u32"
+          },
+          {
+            "name": "maker_fee_rate",
+            "type": {
+              "option": "u16"
+            }
+          },
+          {
+            "name": "taker_fee_rate",
+            "type": {
+              "option": "u16"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetFundingSettingsEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "market_id",
+            "type": "u32"
+          },
+          {
+            "name": "skew_scale",
+            "type": {
+              "option": "u128"
+            }
+          },
+          {
+            "name": "max_funding_velocity",
+            "type": {
+              "option": "u16"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetMarketLiquidationSettingsEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "market_id",
+            "type": "u32"
+          },
+          {
+            "name": "min_position_margin",
+            "type": {
+              "option": "u128"
+            }
+          },
+          {
+            "name": "max_liquidation_limit_accumulation_multiplier",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "max_seconds_in_liquidation_epoch",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "initial_margin_ratio",
+            "type": {
+              "option": "u32"
+            }
+          },
+          {
+            "name": "liquidation_fee_rate",
+            "type": {
+              "option": "u16"
+            }
+          },
+          {
+            "name": "min_initial_margin_ratio",
+            "type": {
+              "option": "u16"
+            }
+          },
+          {
+            "name": "maintenance_margin_proportion",
+            "type": {
+              "option": "u16"
+            }
+          },
+          {
+            "name": "max_liquidation_pd",
+            "type": {
+              "option": "u16"
+            }
+          },
+          {
+            "name": "authorized_liquidator",
+            "type": {
+              "option": "pubkey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetMaxSideSizeEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "market_id",
+            "type": "u32"
+          },
+          {
+            "name": "max_side_size",
+            "type": "u128"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetPriceFeedEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "market_id",
+            "type": "u32"
+          },
+          {
+            "name": "price_feed",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UpdateMarketStatusEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "market_id",
+            "type": "u32"
+          },
+          {
+            "name": "status",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RefreshLockedOiAccountingEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "notional_open_interest",
+            "type": "u128"
+          },
+          {
+            "name": "unrealized_pnl",
+            "type": "i128"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AddLiquidityEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "signer",
+            "type": "pubkey"
+          },
+          {
+            "name": "liquidity",
+            "type": "u64"
+          },
+          {
+            "name": "shares",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_lp_balance",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_lp_shares",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_balance",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CloseLpAccountEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CreateLpAccountEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RemoveLiquidityEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "settlement_request_id",
+            "type": "u64"
+          },
+          {
+            "name": "liquidity",
+            "type": "u64"
+          },
+          {
+            "name": "shares",
+            "type": "u64"
+          },
+          {
+            "name": "liquidity_value",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_lp_shares",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_lp_balance",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_balance",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_unsettled_collateral_amount",
+            "type": "u64"
+          },
+          {
+            "name": "settlement_request_maturity",
+            "type": "u64"
+          },
+          {
+            "name": "settlement_request_keeper_tip",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetLpAccountDelegateEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "delegate",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UpgradeLpAccountEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "lp_position_id",
+            "type": "u64"
+          },
+          {
+            "name": "liquidity",
+            "type": "u64"
+          },
+          {
+            "name": "shares",
+            "type": "u64"
+          },
+          {
+            "name": "maturity",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AddLiquidityV2Event",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "lp_position_id",
+            "type": "u64"
+          },
+          {
+            "name": "liquidity",
+            "type": "u64"
+          },
+          {
+            "name": "shares",
+            "type": "u64"
+          },
+          {
+            "name": "maturity",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_lp_balance_pre",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_lp_shares_pre",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_balance_pre",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_lp_balance_post",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_lp_shares_post",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_balance_post",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CloseLpPositionEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "lp_position_id",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RemoveLiquidityV2Event",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "lp_position_id",
+            "type": "u64"
+          },
+          {
+            "name": "settlement_request_id",
+            "type": "u64"
+          },
+          {
+            "name": "liquidity",
+            "type": "u64"
+          },
+          {
+            "name": "shares",
+            "type": "u64"
+          },
+          {
+            "name": "new_liquidity_amount",
+            "type": "u64"
+          },
+          {
+            "name": "new_shares_amount",
+            "type": "u64"
+          },
+          {
+            "name": "lp_position_maturity",
+            "type": "u64"
+          },
+          {
+            "name": "liquidity_value",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_lp_balance_pre",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_lp_shares_pre",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_balance_pre",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_lp_balance_post",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_lp_shares_post",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_balance_post",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_unsettled_collateral_amount",
+            "type": "u64"
+          },
+          {
+            "name": "settlement_request_maturity",
+            "type": "u64"
+          },
+          {
+            "name": "settlement_request_keeper_tip",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CloseMarginAccountEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "margin_account_id",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CreateMarginAccountEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "margin_account_id",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DepositMarginEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "margin_account_id",
+            "type": "u32"
+          },
+          {
+            "name": "signer",
+            "type": "pubkey"
+          },
+          {
+            "name": "deposited_margin",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_margin_balance",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LiquidateEventV2",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "margin_account_id",
+            "type": "u32"
+          },
+          {
+            "name": "liquidator",
+            "type": "pubkey"
+          },
+          {
+            "name": "liquidator_margin_account_id",
+            "type": "u32"
+          },
+          {
+            "name": "start_liquidation_event",
+            "type": {
+              "option": {
+                "defined": {
+                  "name": "StartLiquidationEvent"
+                }
+              }
+            }
+          },
+          {
+            "name": "liquidation_fee",
+            "type": "u64"
+          },
+          {
+            "name": "liquidation_events",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "LiquidationEventV2"
+                }
+              }
+            }
+          },
+          {
+            "name": "exchange_update_event",
+            "type": {
+              "defined": {
+                "name": "ExchangeUpdateEvent"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "LiquidateEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "margin_account_id",
+            "type": "u32"
+          },
+          {
+            "name": "liquidator",
+            "type": "pubkey"
+          },
+          {
+            "name": "liquidator_margin_account_id",
+            "type": "u32"
+          },
+          {
+            "name": "start_liquidation_event",
+            "type": {
+              "option": {
+                "defined": {
+                  "name": "StartLiquidationEvent"
+                }
+              }
+            }
+          },
+          {
+            "name": "liquidation_fee",
+            "type": "u64"
+          },
+          {
+            "name": "liquidation_events",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "LiquidationEvent"
+                }
+              }
+            }
+          },
+          {
+            "name": "exchange_update_event",
+            "type": {
+              "defined": {
+                "name": "ExchangeUpdateEvent"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ModifyPositionEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "margin_account_id",
+            "type": "u32"
+          },
+          {
+            "name": "signer",
+            "type": "pubkey"
+          },
+          {
+            "name": "market_id",
+            "type": "u32"
+          },
+          {
+            "name": "fill_price",
+            "type": "u128"
+          },
+          {
+            "name": "index_price",
+            "type": "u64"
+          },
+          {
+            "name": "pnl",
+            "type": "i128"
+          },
+          {
+            "name": "price_component",
+            "type": "i128"
+          },
+          {
+            "name": "accrued_funding",
+            "type": "i128"
+          },
+          {
+            "name": "size_delta",
+            "type": "i128"
+          },
+          {
+            "name": "new_position_size",
+            "type": "i128"
+          },
+          {
+            "name": "lp_fee",
+            "type": "u64"
+          },
+          {
+            "name": "protocol_fee",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_update_event",
+            "type": {
+              "defined": {
+                "name": "ExchangeUpdateEvent"
+              }
+            }
+          },
+          {
+            "name": "market_update_event",
+            "type": {
+              "defined": {
+                "name": "MarketUpdateEvent"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetMarginAccountDelegateEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "margin_account_id",
+            "type": "u32"
+          },
+          {
+            "name": "delegate",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WithdrawMarginEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_id",
+            "type": "u64"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "settlement_request_id",
+            "type": "u64"
+          },
+          {
+            "name": "margin_account_id",
+            "type": "u32"
+          },
+          {
+            "name": "withdrawn_margin",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_margin_balance",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_unsettled_collateral_amount",
+            "type": "u64"
+          },
+          {
+            "name": "settlement_request_maturity",
+            "type": "u64"
+          },
+          {
+            "name": "settlement_request_keeper_tip",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ProcessSettlementRequestsEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "events",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "ProcessSettlementRequestEvent"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
