@@ -10,11 +10,11 @@ This IDL was generated using Anchor `v0.31.0`.
 ## Installation
 
 ```bash
-npm install parcl-v3-idl
+npm install @parcl-oss/parcl-v3-idl
 # or
-yarn add parcl-v3-idl
+yarn add @parcl-oss/parcl-v3-idl
 # or
-pnpm add parcl-v3-idl
+pnpm add @parcl-oss/parcl-v3-idl
 ```
 
 ## Usage
