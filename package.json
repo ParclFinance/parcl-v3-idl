@@ -3,11 +3,18 @@
   "version": "0.1.3",
   "type": "module",
   "description": "TypeScript and JSON IDL for the Parcl V3 protocol on Solana.",
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist/index.js",
+    "dist/index.mjs",
+    "dist/index.d.ts",
+    "dist/index.d.cts",
+    "parcl-v3-idl.json",
+    "parcl-v3-idl.ts",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsup",
